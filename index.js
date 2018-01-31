@@ -1,12 +1,17 @@
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
+let nextPageToken = '';
+let searchTerm = '';
 
-function getDataFromApi(searchTerm, callback) {
+function getDataFromApi(callback) {
   const query = {
-    //pageToken: `${nextPageToken}`,
     part: 'snippet',
     key: 'AIzaSyCH36HRS0a8HPRC4BcsuMSzHDlnx_drcbs',
     q: `${searchTerm}`
   }
+  if (nextPageToken) {
+    query.pageToken = nextPageToken;
+  }
+  console.log(query);
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 }
 
@@ -21,50 +26,38 @@ function renderResult(result) {
 }
 
 function displayYouTubeSearchData(data) {
+  nextPageToken = data.nextPageToken;
   console.log('displayYouTubeSearchData ran');
   const results = data.items.map((item, index) => renderResult(item));
   $('.search-results').html(results);
-  //renderNextResultsButton();
+  renderNextResultsButton();
+  handleNextResultsClick();
 }
 
-//Attempts at adding Next 5 Resutls button. How to call the nextPageToken from here?
-/*
 function renderNextResultsButton() {
   console.log('renderNextResultsButton ran');
   $('.search-results').append(`
-      <form action="${YOUTUBE_SEARCH_URL}'?pageToken='${result.nextPageToken}'&q='${q}'&part='${part}'&key='${key}">
-        <input type='submit' value='Next 5 results' />
-      </form>
+      <input type='submit' value='Next 5 results' class='next-results' />
     `);
 }
+
 
 function handleNextResultsClick() {
   console.log('handleNextResultsClick ran');
   $('main').on('click', '.next-results', event => {
     event.preventDefault();
-    getNextPageDataFromApi(query, displayYouTubeSearchData);
+    getDataFromApi(displayYouTubeSearchData);
   });
 }
 
-function getNextPageDataFromApi(searchTerm, callback) {
-  console.log('getNextPageDataFromApi ran');
-  const query = {
-    pageToken: `${nextPageToken}`,
-    part: 'snippet',
-    key: 'AIzaSyCH36HRS0a8HPRC4BcsuMSzHDlnx_drcbs',
-    q: `${searchTerm}`
-  }
-  $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
-}
-*/
 function watchSubmit() {
   console.log('watchSubmit ran')
   $('.search-form').submit(event => {
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.search-input');
-    const query = queryTarget.val();
+    searchTerm = queryTarget.val();
     queryTarget.val('');
-    getDataFromApi(query, displayYouTubeSearchData);
+    getDataFromApi(displayYouTubeSearchData);
   });
 }
 
