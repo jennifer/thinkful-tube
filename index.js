@@ -18,7 +18,7 @@ function getDataFromApi(callback) {
 function renderResult(result) {
   console.log('renderResult ran')
   return `
-    <div>
+    <div class='each-result'>
       <h2 class='snippet-title'>${result.snippet.title}</h2>
       <a href='https://www.youtube.com/watch?v=${result.id.videoId}'><img src='${result.snippet.thumbnails.medium.url}' class='thumbnail' alt='Thumbnail showing a preview of the video'/></a>  
     </div>
@@ -37,7 +37,7 @@ function displayYouTubeSearchData(data) {
 function renderNextResultsButton() {
   console.log('renderNextResultsButton ran');
   $('.search-results').append(`
-      <input type='submit' value='Next 5 results' class='next-results' />
+      <input type='submit' value='Next 5 results' class='button next-results' />
     `);
 }
 

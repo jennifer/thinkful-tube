@@ -2,3 +2,48 @@ body {
 	font-family: sans-serif;
 	text-align: center;
 }
+
+.button {
+	height: 30px;
+	width: 100px;
+	font-size: 16px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px 0 #999999;
+}
+
+.next-results {
+	width: 150px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: #ff0000;
+}
+
+.button:active {
+    transform: translateY(3px);
+}
+
+.search-input {
+	height: 26px;
+	width: 200px;
+	border: 1px solid black;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.each-result {
+	margin: 0 auto 15px auto;
+	max-width: 500px;
+	border: 3px black dotted;
+	border-radius: 3px;
+	padding: 0 10px 20px 10px;
+}
+
+.each-result:hover {
+    background-color: #ff0000;
+}
