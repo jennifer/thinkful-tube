@@ -16,12 +16,12 @@ body {
 
 .next-results {
 	width: 150px;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
 .button:hover {
-    background-color: #ff0000;
+    background-color: #ff1a1a;
 }
 
 .button:active {
@@ -45,5 +45,9 @@ body {
 }
 
 .each-result:hover {
-    background-color: #ff0000;
+    background-color: #ff1a1a;
+}
+
+.thumbnail {
+	border-radius: 2px;
 }
