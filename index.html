@@ -8,11 +8,11 @@
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     </head>
     <body>
-      <main>
+      <main role='main' aria-live="polite" hidden>
         <section class='left-column'>
-          <h1>Search for videos on YouTube</h1>
+          <label for='input'>Search for videos on YouTube</label>
             <form action='#' class='search-form'>
-              <input type='text' class='search-input'><span class='input-group-button'>
+              <input type='text' class='search-input' id='input' /><span class='input-group-button'>
                 <button type='submit' class='button search-button'>Search</button>
               </span>
             </form>

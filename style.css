@@ -11,7 +11,12 @@ main {
 	grid-template-columns: 390px auto;
 }
 
-h1, h2 {
+label, h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2 {
 	margin-top: 0;
 	margin-bottom: 10px;
 }
@@ -52,6 +57,10 @@ h1, h2 {
 		grid-column-start: none;
 	}
 }	
+
+.search-form {
+  margin-top: 10px;
+}
 
 .search-input {
 	height: 35px;

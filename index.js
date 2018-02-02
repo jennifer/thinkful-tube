@@ -29,7 +29,9 @@ function displayYouTubeSearchData(data) {
   nextPageToken = data.nextPageToken;
   console.log('displayYouTubeSearchData ran');
   const results = data.items.map((item, index) => renderResult(item));
-  $('.search-results').html(results);
+  $('.search-results')
+  .prop('hidden', false)
+  .html(results);
   renderNextResultsButton();
   handleNextResultsClick();
 }
