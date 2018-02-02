@@ -13,7 +13,7 @@ main {
 
 h1, h2 {
 	margin-top: 0;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .left-column {
@@ -30,10 +30,10 @@ h1, h2 {
 
 .right-column {
 	grid-column-start: 2;
+  width: auto;
 	padding-left: 20px;
 	padding-top: 20px;
-	width: auto;
-	margin-right: 20px;
+  margin-right: 20px;
 }
 
 @media (max-width: 800px) {
@@ -50,8 +50,6 @@ h1, h2 {
 	.right-column {
 		grid-row-start: 2;
 		grid-column-start: none;
-		width: 100%;
-		padding-top: 20px;
 	}
 }	
 
@@ -59,23 +57,24 @@ h1, h2 {
 	height: 35px;
 	width: 262px;
 	border: 1px solid white;
-    background-color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+  background-color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 8px;
 }
 
 .button {
 	height: 39px;
 	width: 80px;
-    padding: 5px;
-    background-color: rgb(238, 225, 212);
-    border: none;
-    margin-top: -7px;
-    margin-left: -5px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+  padding: 5px;
+  background-color: rgb(238, 225, 212);
+  border: none;
+  margin-top: -7px;
+  margin-left: -5px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .next-results {
@@ -85,7 +84,7 @@ h1, h2 {
 }
 
 .button:hover {
-    background-color: #ff1a1a;
+  background-color: #ff1a1a;
 }
 
 .snippet-title {
@@ -98,9 +97,5 @@ h1, h2 {
 }
 
 .each-result:hover {
-    background-color: #ff1a1a;
-}
-
-.thumbnail {
-	border-radius: 2px;
+  background-color: #ff1a1a;
 }
