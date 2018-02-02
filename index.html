@@ -8,14 +8,18 @@
     </head>
     <body>
       <main>
-        <h1>Search for videos on YouTube</h1>
-          <form action='#' class='search-form'>
-            <label for='query'></label>
-            <input type='text' class='search-input'>
-            <button type='submit' class='button'>Search</button>
-          </form>
+        <section class='left-column'>
+          <h1>Search for videos on YouTube</h1>
+            <form action='#' class='search-form'>
+              <label for='query'></label>
+              <input type='text' class='search-input'>
+              <button type='submit' class='button'>Search</button>
+            </form>
+        </section>
+        <section class='right-column'>
           <h2>Results</h2>
           <div class='search-results'></div>
+        </section>
       </main>
       <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
       <script src='index.js'></script>

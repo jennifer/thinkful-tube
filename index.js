@@ -41,7 +41,6 @@ function renderNextResultsButton() {
     `);
 }
 
-
 function handleNextResultsClick() {
   console.log('handleNextResultsClick ran');
   $('main').on('click', '.next-results', event => {
