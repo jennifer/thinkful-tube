@@ -1,44 +1,80 @@
 body {
-	font-family: sans-serif;
+	font-family: 'Work Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: rgb(238, 225, 212);
 }
 
 main {
 	display: inline-grid;
-	grid-template-columns: 370px auto;
-	grid-template-rows: 150px;
+	grid-template-columns: 390px auto;
+}
+
+h1, h2 {
+	margin-top: 0;
+	margin-bottom: 20px;
 }
 
 .left-column {
 	grid-column-start: 1;
 	grid-column-end: 2;
+	position: fixed;
+	height: 100%;
+	width: 370px;
+	background-color: rgb(238, 225, 212);
+	border-right: 2px solid black;
+	padding-top: 20px;
+	padding-left: 20px;
 }
 
 .right-column {
 	grid-column-start: 2;
-	grid-row-start: 1;
-	grid-row-end: 3;
-	border-left: 2px dotted black;
 	padding-left: 20px;
+	padding-top: 20px;
 	width: auto;
 }
 
 @media (max-width: 800px) {
+	main {
+		grid-template-rows: 140px 100%;
+		grid-template-columns: none;
+	}
+	.left-column {
+		height: 118px;
+		width: 100%;
+		border-right: none;
+		border-bottom: 2px solid black;
+	}	
 	.right-column {
-		grid-column-start: 1;
 		grid-row-start: 2;
-		border-left: 0;
+		grid-column-start: none;
+		width: 100%;
+		padding-top: 20px;
 	}
 }	
 
-.button {
-	height: 30px;
-	width: 100px;
-	font-size: 16px;
-    padding: 5px;
+.search-input {
+	height: 35px;
+	width: 262px;
+	border: 1px solid white;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 2px;
-    box-shadow: 0 3px 5px 0 #999999;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button {
+	height: 39px;
+	width: 80px;
+    padding: 5px;
+    background-color: rgb(238, 225, 212);
+    border: none;
+    margin-top: -7px;
+    margin-left: -5px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .next-results {
@@ -51,25 +87,13 @@ main {
     background-color: #ff1a1a;
 }
 
-.button:active {
-    transform: translateY(3px);
-}
-
-.search-input {
-	height: 26px;
-	width: 200px;
-	border: 1px solid black;
-    border-radius: 2px;
-    margin-right: 5px;
-}
-
-.each-result, .snippet-title {
-	margin: 0;
+.snippet-title {
 	padding-bottom: 10px;
+	font-size: 20px;
 }
 
 .each-result {
-	padding-bottom: 15px;
+	padding: 10px 10px 20px 20px;
 }
 
 .each-result:hover {
